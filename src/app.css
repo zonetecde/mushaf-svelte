@@ -3,14 +3,10 @@
 @import 'tailwindcss';
 
 @font-face {
-	font-family: 'Surahs';
-	src: url('/fonts/Surahs.ttf') format('truetype');
+	font-family: 'surahs';
+	src: url('./fonts/Surahs.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
-}
-
-.surahs-font {
-	font-family: 'Surahs', sans-serif;
 }
 
 body {

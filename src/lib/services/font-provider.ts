@@ -125,6 +125,17 @@ export class QPCFontProvider {
 				return '';
 		}
 	}
+
+	static getBasmalaFont(version: '1' | '2'): string {
+		switch (version) {
+			case '1':
+				return 'QPC1BSML';
+			case '2':
+				return 'QPC2BSML';
+			default:
+				return '';
+		}
+	}
 }
 
 export default QPCFontProvider;
