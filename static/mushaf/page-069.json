@@ -1,0 +1,748 @@
+{
+  "lines": [
+    [
+      {
+        "type": "word",
+        "location": "3:149:1",
+        "word": "يَـٰٓأَيُّهَا",
+        "qpcV2": "ﱁ",
+        "qpcV1": "ﭑ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:2",
+        "word": "ٱلَّذِينَ",
+        "qpcV2": "ﱂ",
+        "qpcV1": "ﭒ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:3",
+        "word": "ءَامَنُوٓا۟",
+        "qpcV2": "ﱃ",
+        "qpcV1": "ﭓ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:4",
+        "word": "إِن",
+        "qpcV2": "ﱄ",
+        "qpcV1": "ﭔ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:5",
+        "word": "تُطِيعُوا۟",
+        "qpcV2": "ﱅ",
+        "qpcV1": "ﭕ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:6",
+        "word": "ٱلَّذِينَ",
+        "qpcV2": "ﱆ",
+        "qpcV1": "ﭖ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:7",
+        "word": "كَفَرُوا۟",
+        "qpcV2": "ﱇ",
+        "qpcV1": "ﭗ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:149:8",
+        "word": "يَرُدُّوكُمْ",
+        "qpcV2": "ﱈ",
+        "qpcV1": "ﭘ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:9",
+        "word": "عَلَىٰٓ",
+        "qpcV2": "ﱉ",
+        "qpcV1": "ﭙ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:10",
+        "word": "أَعْقَـٰبِكُمْ",
+        "qpcV2": "ﱊ",
+        "qpcV1": "ﭚ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:11",
+        "word": "فَتَنقَلِبُوا۟",
+        "qpcV2": "ﱋ",
+        "qpcV1": "ﭛ"
+      },
+      {
+        "type": "word",
+        "location": "3:149:12",
+        "word": "خَـٰسِرِينَ",
+        "qpcV2": "ﱌ ﱍ",
+        "qpcV1": "ﭜ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:150:1",
+        "word": "بَلِ",
+        "qpcV2": "ﱎ",
+        "qpcV1": "ﭞ"
+      },
+      {
+        "type": "word",
+        "location": "3:150:2",
+        "word": "ٱللَّهُ",
+        "qpcV2": "ﱏ",
+        "qpcV1": "ﭟ"
+      },
+      {
+        "type": "word",
+        "location": "3:150:3",
+        "word": "مَوْلَىٰكُمْ ۖ",
+        "qpcV2": "ﱐﱑ",
+        "qpcV1": "ﭠﭡ"
+      },
+      {
+        "type": "word",
+        "location": "3:150:4",
+        "word": "وَهُوَ",
+        "qpcV2": "ﱒ",
+        "qpcV1": "ﭢ"
+      },
+      {
+        "type": "word",
+        "location": "3:150:5",
+        "word": "خَيْرُ",
+        "qpcV2": "ﱓ",
+        "qpcV1": "ﭣ"
+      },
+      {
+        "type": "word",
+        "location": "3:150:6",
+        "word": "ٱلنَّـٰصِرِينَ",
+        "qpcV2": "ﱔ ﱕ",
+        "qpcV1": "ﭤ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:1",
+        "word": "سَنُلْقِى",
+        "qpcV2": "ﱖ",
+        "qpcV1": "ﭦ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:151:2",
+        "word": "فِى",
+        "qpcV2": "ﱗ",
+        "qpcV1": "ﭧ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:3",
+        "word": "قُلُوبِ",
+        "qpcV2": "ﱘ",
+        "qpcV1": "ﭨ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:4",
+        "word": "ٱلَّذِينَ",
+        "qpcV2": "ﱙ",
+        "qpcV1": "ﭩ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:5",
+        "word": "كَفَرُوا۟",
+        "qpcV2": "ﱚ",
+        "qpcV1": "ﭪ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:6",
+        "word": "ٱلرُّعْبَ",
+        "qpcV2": "ﱛ",
+        "qpcV1": "ﭫ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:7",
+        "word": "بِمَآ",
+        "qpcV2": "ﱜ",
+        "qpcV1": "ﭬ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:8",
+        "word": "أَشْرَكُوا۟",
+        "qpcV2": "ﱝ",
+        "qpcV1": "ﭭ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:9",
+        "word": "بِٱللَّهِ",
+        "qpcV2": "ﱞ",
+        "qpcV1": "ﭮ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:151:10",
+        "word": "مَا",
+        "qpcV2": "ﱟ",
+        "qpcV1": "ﭯ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:11",
+        "word": "لَمْ",
+        "qpcV2": "ﱠ",
+        "qpcV1": "ﭰ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:12",
+        "word": "يُنَزِّلْ",
+        "qpcV2": "ﱡ",
+        "qpcV1": "ﭱ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:13",
+        "word": "بِهِۦ",
+        "qpcV2": "ﱢ",
+        "qpcV1": "ﭲ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:14",
+        "word": "سُلْطَـٰنًۭا ۖ",
+        "qpcV2": "ﱣﱤ",
+        "qpcV1": "ﭳﭴ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:15",
+        "word": "وَمَأْوَىٰهُمُ",
+        "qpcV2": "ﱥ",
+        "qpcV1": "ﭵ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:16",
+        "word": "ٱلنَّارُ ۚ",
+        "qpcV2": "ﱦﱧ",
+        "qpcV1": "ﭶﭷ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:17",
+        "word": "وَبِئْسَ",
+        "qpcV2": "ﱨ",
+        "qpcV1": "ﭸ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:151:18",
+        "word": "مَثْوَى",
+        "qpcV2": "ﱩ",
+        "qpcV1": "ﭹ"
+      },
+      {
+        "type": "word",
+        "location": "3:151:19",
+        "word": "ٱلظَّـٰلِمِينَ",
+        "qpcV2": "ﱪ ﱫ",
+        "qpcV1": "ﭺ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:1",
+        "word": "وَلَقَدْ",
+        "qpcV2": "ﱬ",
+        "qpcV1": "ﭼ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:2",
+        "word": "صَدَقَكُمُ",
+        "qpcV2": "ﱭ",
+        "qpcV1": "ﭽ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:3",
+        "word": "ٱللَّهُ",
+        "qpcV2": "ﱮ",
+        "qpcV1": "ﭾ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:152:4",
+        "word": "وَعْدَهُۥٓ",
+        "qpcV2": "ﱯ",
+        "qpcV1": "ﭿ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:5",
+        "word": "إِذْ",
+        "qpcV2": "ﱰ",
+        "qpcV1": "ﮀ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:6",
+        "word": "تَحُسُّونَهُم",
+        "qpcV2": "ﱱ",
+        "qpcV1": "ﮁ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:7",
+        "word": "بِإِذْنِهِۦ ۖ",
+        "qpcV2": "ﱲﱳ",
+        "qpcV1": "ﮂﮃ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:8",
+        "word": "حَتَّىٰٓ",
+        "qpcV2": "ﱴ",
+        "qpcV1": "ﮄ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:9",
+        "word": "إِذَا",
+        "qpcV2": "ﱵ",
+        "qpcV1": "ﮅ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:10",
+        "word": "فَشِلْتُمْ",
+        "qpcV2": "ﱶ",
+        "qpcV1": "ﮆ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:152:11",
+        "word": "وَتَنَـٰزَعْتُمْ",
+        "qpcV2": "ﱷ",
+        "qpcV1": "ﮇ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:12",
+        "word": "فِى",
+        "qpcV2": "ﱸ",
+        "qpcV1": "ﮈ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:13",
+        "word": "ٱلْأَمْرِ",
+        "qpcV2": "ﱹ",
+        "qpcV1": "ﮉ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:14",
+        "word": "وَعَصَيْتُم",
+        "qpcV2": "ﱺ",
+        "qpcV1": "ﮊ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:15",
+        "word": "مِّنۢ",
+        "qpcV2": "ﱻ",
+        "qpcV1": "ﮋ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:16",
+        "word": "بَعْدِ",
+        "qpcV2": "ﱼ",
+        "qpcV1": "ﮌ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:17",
+        "word": "مَآ",
+        "qpcV2": "ﱽ",
+        "qpcV1": "ﮍ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:18",
+        "word": "أَرَىٰكُم",
+        "qpcV2": "ﱾ",
+        "qpcV1": "ﮎ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:152:19",
+        "word": "مَّا",
+        "qpcV2": "ﱿ",
+        "qpcV1": "ﮏ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:20",
+        "word": "تُحِبُّونَ ۚ",
+        "qpcV2": "ﲀﲁ",
+        "qpcV1": "ﮐﮑ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:21",
+        "word": "مِنكُم",
+        "qpcV2": "ﲂ",
+        "qpcV1": "ﮒ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:22",
+        "word": "مَّن",
+        "qpcV2": "ﲃ",
+        "qpcV1": "ﮓ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:23",
+        "word": "يُرِيدُ",
+        "qpcV2": "ﲄ",
+        "qpcV1": "ﮔ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:24",
+        "word": "ٱلدُّنْيَا",
+        "qpcV2": "ﲅ",
+        "qpcV1": "ﮕ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:25",
+        "word": "وَمِنكُم",
+        "qpcV2": "ﲆ",
+        "qpcV1": "ﮖ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:152:26",
+        "word": "مَّن",
+        "qpcV2": "ﲇ",
+        "qpcV1": "ﮗ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:27",
+        "word": "يُرِيدُ",
+        "qpcV2": "ﲈ",
+        "qpcV1": "ﮘ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:28",
+        "word": "ٱلْـَٔاخِرَةَ ۚ",
+        "qpcV2": "ﲉﲊ",
+        "qpcV1": "ﮙﮚ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:29",
+        "word": "ثُمَّ",
+        "qpcV2": "ﲋ",
+        "qpcV1": "ﮛ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:30",
+        "word": "صَرَفَكُمْ",
+        "qpcV2": "ﲌ",
+        "qpcV1": "ﮜ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:31",
+        "word": "عَنْهُمْ",
+        "qpcV2": "ﲍ",
+        "qpcV1": "ﮝ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:32",
+        "word": "لِيَبْتَلِيَكُمْ ۖ",
+        "qpcV2": "ﲎﲏ",
+        "qpcV1": "ﮞﮟ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:152:33",
+        "word": "وَلَقَدْ",
+        "qpcV2": "ﲐ",
+        "qpcV1": "ﮠ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:34",
+        "word": "عَفَا",
+        "qpcV2": "ﲑ",
+        "qpcV1": "ﮡ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:35",
+        "word": "عَنكُمْ ۗ",
+        "qpcV2": "ﲒﲓ",
+        "qpcV1": "ﮢﮣ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:36",
+        "word": "وَٱللَّهُ",
+        "qpcV2": "ﲔ",
+        "qpcV1": "ﮤ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:37",
+        "word": "ذُو",
+        "qpcV2": "ﲕ",
+        "qpcV1": "ﮥ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:38",
+        "word": "فَضْلٍ",
+        "qpcV2": "ﲖ",
+        "qpcV1": "ﮦ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:39",
+        "word": "عَلَى",
+        "qpcV2": "ﲗ",
+        "qpcV1": "ﮧ"
+      },
+      {
+        "type": "word",
+        "location": "3:152:40",
+        "word": "ٱلْمُؤْمِنِينَ",
+        "qpcV2": "ﲘ ﲙ",
+        "qpcV1": "ﮨ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:153:1",
+        "word": "۞ إِذْ",
+        "qpcV2": "ﲚﲛ",
+        "qpcV1": "ﮪﮫ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:2",
+        "word": "تُصْعِدُونَ",
+        "qpcV2": "ﲜ",
+        "qpcV1": "ﮬ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:3",
+        "word": "وَلَا",
+        "qpcV2": "ﲝ",
+        "qpcV1": "ﮭ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:4",
+        "word": "تَلْوُۥنَ",
+        "qpcV2": "ﲞ",
+        "qpcV1": "ﮮ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:5",
+        "word": "عَلَىٰٓ",
+        "qpcV2": "ﲟ",
+        "qpcV1": "ﮯ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:6",
+        "word": "أَحَدٍۢ",
+        "qpcV2": "ﲠ",
+        "qpcV1": "ﮰ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:153:7",
+        "word": "وَٱلرَّسُولُ",
+        "qpcV2": "ﲡ",
+        "qpcV1": "ﮱ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:8",
+        "word": "يَدْعُوكُمْ",
+        "qpcV2": "ﲢ",
+        "qpcV1": "ﯓ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:9",
+        "word": "فِىٓ",
+        "qpcV2": "ﲣ",
+        "qpcV1": "ﯔ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:10",
+        "word": "أُخْرَىٰكُمْ",
+        "qpcV2": "ﲤ",
+        "qpcV1": "ﯕ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:11",
+        "word": "فَأَثَـٰبَكُمْ",
+        "qpcV2": "ﲥ",
+        "qpcV1": "ﯖ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:153:12",
+        "word": "غَمًّۢا",
+        "qpcV2": "ﲦ",
+        "qpcV1": "ﯗ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:13",
+        "word": "بِغَمٍّۢ",
+        "qpcV2": "ﲧ",
+        "qpcV1": "ﯘ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:14",
+        "word": "لِّكَيْلَا",
+        "qpcV2": "ﲨ",
+        "qpcV1": "ﯙ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:15",
+        "word": "تَحْزَنُوا۟",
+        "qpcV2": "ﲩ",
+        "qpcV1": "ﯚ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:16",
+        "word": "عَلَىٰ",
+        "qpcV2": "ﲪ",
+        "qpcV1": "ﯛ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:17",
+        "word": "مَا",
+        "qpcV2": "ﲫ",
+        "qpcV1": "ﯜ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:18",
+        "word": "فَاتَكُمْ",
+        "qpcV2": "ﲬ",
+        "qpcV1": "ﯝ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "3:153:19",
+        "word": "وَلَا",
+        "qpcV2": "ﲭ",
+        "qpcV1": "ﯞ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:20",
+        "word": "مَآ",
+        "qpcV2": "ﲮ",
+        "qpcV1": "ﯟ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:21",
+        "word": "أَصَـٰبَكُمْ ۗ",
+        "qpcV2": "ﲯﲰ",
+        "qpcV1": "ﯠﯡ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:22",
+        "word": "وَٱللَّهُ",
+        "qpcV2": "ﲱ",
+        "qpcV1": "ﯢ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:23",
+        "word": "خَبِيرٌۢ",
+        "qpcV2": "ﲲ",
+        "qpcV1": "ﯣ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:24",
+        "word": "بِمَا",
+        "qpcV2": "ﲳ",
+        "qpcV1": "ﯤ"
+      },
+      {
+        "type": "word",
+        "location": "3:153:25",
+        "word": "تَعْمَلُونَ",
+        "qpcV2": "ﲴ ﲵ",
+        "qpcV1": "ﯥ"
+      }
+    ]
+  ]
+}

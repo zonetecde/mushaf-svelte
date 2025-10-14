@@ -1,0 +1,563 @@
+{
+  "lines": [
+    [
+      {
+        "type": "word",
+        "location": "100:10:1",
+        "word": "وَحُصِّلَ",
+        "qpcV2": "ﱙ",
+        "qpcV1": "ﭑ"
+      },
+      {
+        "type": "word",
+        "location": "100:10:2",
+        "word": "مَا",
+        "qpcV2": "ﱚ",
+        "qpcV1": "ﭒ"
+      },
+      {
+        "type": "word",
+        "location": "100:10:3",
+        "word": "فِى",
+        "qpcV2": "ﱛ",
+        "qpcV1": "ﭓ"
+      },
+      {
+        "type": "word",
+        "location": "100:10:4",
+        "word": "ٱلصُّدُورِ",
+        "qpcV2": "ﱜ ﱝ",
+        "qpcV1": "ﭔ"
+      },
+      {
+        "type": "word",
+        "location": "100:11:1",
+        "word": "إِنَّ",
+        "qpcV2": "ﱞ",
+        "qpcV1": "ﭖ"
+      },
+      {
+        "type": "word",
+        "location": "100:11:2",
+        "word": "رَبَّهُم",
+        "qpcV2": "ﱟ",
+        "qpcV1": "ﭗ"
+      },
+      {
+        "type": "word",
+        "location": "100:11:3",
+        "word": "بِهِمْ",
+        "qpcV2": "ﱠ",
+        "qpcV1": "ﭘ"
+      },
+      {
+        "type": "word",
+        "location": "100:11:4",
+        "word": "يَوْمَئِذٍۢ",
+        "qpcV2": "ﱡ",
+        "qpcV1": "ﭙ"
+      },
+      {
+        "type": "word",
+        "location": "100:11:5",
+        "word": "لَّخَبِيرٌۢ",
+        "qpcV2": "ﱢ ﱣ",
+        "qpcV1": "ﭚ"
+      }
+    ],
+    [
+      {
+        "type": "surah-header",
+        "surah": "101"
+      }
+    ],
+    [
+      {
+        "qpc": "ﭑﭒﭓ",
+        "font": "QPC2BSML",
+        "isBasmala": true
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:1:1",
+        "word": "ٱلْقَارِعَةُ",
+        "qpcV2": "ﱤ ﱥ",
+        "qpcV1": "ﭜ"
+      },
+      {
+        "type": "word",
+        "location": "101:2:1",
+        "word": "مَا",
+        "qpcV2": "ﱦ",
+        "qpcV1": "ﭞ"
+      },
+      {
+        "type": "word",
+        "location": "101:2:2",
+        "word": "ٱلْقَارِعَةُ",
+        "qpcV2": "ﱧ ﱨ",
+        "qpcV1": "ﭟ"
+      },
+      {
+        "type": "word",
+        "location": "101:3:1",
+        "word": "وَمَآ",
+        "qpcV2": "ﱩ",
+        "qpcV1": "ﭡ"
+      },
+      {
+        "type": "word",
+        "location": "101:3:2",
+        "word": "أَدْرَىٰكَ",
+        "qpcV2": "ﱪ",
+        "qpcV1": "ﭢ"
+      },
+      {
+        "type": "word",
+        "location": "101:3:3",
+        "word": "مَا",
+        "qpcV2": "ﱫ",
+        "qpcV1": "ﭣ"
+      },
+      {
+        "type": "word",
+        "location": "101:3:4",
+        "word": "ٱلْقَارِعَةُ",
+        "qpcV2": "ﱬ ﱭ",
+        "qpcV1": "ﭤ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:4:1",
+        "word": "يَوْمَ",
+        "qpcV2": "ﱮ",
+        "qpcV1": "ﭦ"
+      },
+      {
+        "type": "word",
+        "location": "101:4:2",
+        "word": "يَكُونُ",
+        "qpcV2": "ﱯ",
+        "qpcV1": "ﭧ"
+      },
+      {
+        "type": "word",
+        "location": "101:4:3",
+        "word": "ٱلنَّاسُ",
+        "qpcV2": "ﱰ",
+        "qpcV1": "ﭨ"
+      },
+      {
+        "type": "word",
+        "location": "101:4:4",
+        "word": "كَٱلْفَرَاشِ",
+        "qpcV2": "ﱱ",
+        "qpcV1": "ﭩ"
+      },
+      {
+        "type": "word",
+        "location": "101:4:5",
+        "word": "ٱلْمَبْثُوثِ",
+        "qpcV2": "ﱲ ﱳ",
+        "qpcV1": "ﭪ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:5:1",
+        "word": "وَتَكُونُ",
+        "qpcV2": "ﱴ",
+        "qpcV1": "ﭬ"
+      },
+      {
+        "type": "word",
+        "location": "101:5:2",
+        "word": "ٱلْجِبَالُ",
+        "qpcV2": "ﱵ",
+        "qpcV1": "ﭭ"
+      },
+      {
+        "type": "word",
+        "location": "101:5:3",
+        "word": "كَٱلْعِهْنِ",
+        "qpcV2": "ﱶ",
+        "qpcV1": "ﭮ"
+      },
+      {
+        "type": "word",
+        "location": "101:5:4",
+        "word": "ٱلْمَنفُوشِ",
+        "qpcV2": "ﱷ ﱸ",
+        "qpcV1": "ﭯ"
+      },
+      {
+        "type": "word",
+        "location": "101:6:1",
+        "word": "فَأَمَّا",
+        "qpcV2": "ﱹ",
+        "qpcV1": "ﭱ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:6:2",
+        "word": "مَن",
+        "qpcV2": "ﱺ",
+        "qpcV1": "ﭲ"
+      },
+      {
+        "type": "word",
+        "location": "101:6:3",
+        "word": "ثَقُلَتْ",
+        "qpcV2": "ﱻ",
+        "qpcV1": "ﭳ"
+      },
+      {
+        "type": "word",
+        "location": "101:6:4",
+        "word": "مَوَٰزِينُهُۥ",
+        "qpcV2": "ﱼ ﱽ",
+        "qpcV1": "ﭴ"
+      },
+      {
+        "type": "word",
+        "location": "101:7:1",
+        "word": "فَهُوَ",
+        "qpcV2": "ﱾ",
+        "qpcV1": "ﭶ"
+      },
+      {
+        "type": "word",
+        "location": "101:7:2",
+        "word": "فِى",
+        "qpcV2": "ﱿ",
+        "qpcV1": "ﭷ"
+      },
+      {
+        "type": "word",
+        "location": "101:7:3",
+        "word": "عِيشَةٍۢ",
+        "qpcV2": "ﲀ",
+        "qpcV1": "ﭸ"
+      },
+      {
+        "type": "word",
+        "location": "101:7:4",
+        "word": "رَّاضِيَةٍۢ",
+        "qpcV2": "ﲁ ﲂ",
+        "qpcV1": "ﭹ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:8:1",
+        "word": "وَأَمَّا",
+        "qpcV2": "ﲃ",
+        "qpcV1": "ﭻ"
+      },
+      {
+        "type": "word",
+        "location": "101:8:2",
+        "word": "مَنْ",
+        "qpcV2": "ﲄ",
+        "qpcV1": "ﭼ"
+      },
+      {
+        "type": "word",
+        "location": "101:8:3",
+        "word": "خَفَّتْ",
+        "qpcV2": "ﲅ",
+        "qpcV1": "ﭽ"
+      },
+      {
+        "type": "word",
+        "location": "101:8:4",
+        "word": "مَوَٰزِينُهُۥ",
+        "qpcV2": "ﲆ ﲇ",
+        "qpcV1": "ﭾ"
+      },
+      {
+        "type": "word",
+        "location": "101:9:1",
+        "word": "فَأُمُّهُۥ",
+        "qpcV2": "ﲈ",
+        "qpcV1": "ﮀ"
+      },
+      {
+        "type": "word",
+        "location": "101:9:2",
+        "word": "هَاوِيَةٌۭ",
+        "qpcV2": "ﲉ ﲊ",
+        "qpcV1": "ﮁ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "101:10:1",
+        "word": "وَمَآ",
+        "qpcV2": "ﲋ",
+        "qpcV1": "ﮃ"
+      },
+      {
+        "type": "word",
+        "location": "101:10:2",
+        "word": "أَدْرَىٰكَ",
+        "qpcV2": "ﲌ",
+        "qpcV1": "ﮄ"
+      },
+      {
+        "type": "word",
+        "location": "101:10:3",
+        "word": "مَا",
+        "qpcV2": "ﲍ",
+        "qpcV1": "ﮅ"
+      },
+      {
+        "type": "word",
+        "location": "101:10:4",
+        "word": "هِيَهْ",
+        "qpcV2": "ﲎ ﲏ",
+        "qpcV1": "ﮆ"
+      },
+      {
+        "type": "word",
+        "location": "101:11:1",
+        "word": "نَارٌ",
+        "qpcV2": "ﲐ",
+        "qpcV1": "ﮈ"
+      },
+      {
+        "type": "word",
+        "location": "101:11:2",
+        "word": "حَامِيَةٌۢ",
+        "qpcV2": "ﲑ ﲒ",
+        "qpcV1": "ﮉ"
+      }
+    ],
+    [
+      {
+        "type": "surah-header",
+        "surah": "102"
+      }
+    ],
+    [
+      {
+        "qpc": "ﭑﭒﭓ",
+        "font": "QPC2BSML",
+        "isBasmala": true
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "102:1:1",
+        "word": "أَلْهَىٰكُمُ",
+        "qpcV2": "ﲓ",
+        "qpcV1": "ﮋ"
+      },
+      {
+        "type": "word",
+        "location": "102:1:2",
+        "word": "ٱلتَّكَاثُرُ",
+        "qpcV2": "ﲔ ﲕ",
+        "qpcV1": "ﮌ"
+      },
+      {
+        "type": "word",
+        "location": "102:2:1",
+        "word": "حَتَّىٰ",
+        "qpcV2": "ﲖ",
+        "qpcV1": "ﮎ"
+      },
+      {
+        "type": "word",
+        "location": "102:2:2",
+        "word": "زُرْتُمُ",
+        "qpcV2": "ﲗ",
+        "qpcV1": "ﮏ"
+      },
+      {
+        "type": "word",
+        "location": "102:2:3",
+        "word": "ٱلْمَقَابِرَ",
+        "qpcV2": "ﲘ ﲙ",
+        "qpcV1": "ﮐ"
+      },
+      {
+        "type": "word",
+        "location": "102:3:1",
+        "word": "كَلَّا",
+        "qpcV2": "ﲚ",
+        "qpcV1": "ﮒ"
+      },
+      {
+        "type": "word",
+        "location": "102:3:2",
+        "word": "سَوْفَ",
+        "qpcV2": "ﲛ",
+        "qpcV1": "ﮓ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "102:3:3",
+        "word": "تَعْلَمُونَ",
+        "qpcV2": "ﲜ ﲝ",
+        "qpcV1": "ﮔ"
+      },
+      {
+        "type": "word",
+        "location": "102:4:1",
+        "word": "ثُمَّ",
+        "qpcV2": "ﲞ",
+        "qpcV1": "ﮖ"
+      },
+      {
+        "type": "word",
+        "location": "102:4:2",
+        "word": "كَلَّا",
+        "qpcV2": "ﲟ",
+        "qpcV1": "ﮗ"
+      },
+      {
+        "type": "word",
+        "location": "102:4:3",
+        "word": "سَوْفَ",
+        "qpcV2": "ﲠ",
+        "qpcV1": "ﮘ"
+      },
+      {
+        "type": "word",
+        "location": "102:4:4",
+        "word": "تَعْلَمُونَ",
+        "qpcV2": "ﲡ ﲢ",
+        "qpcV1": "ﮙ"
+      },
+      {
+        "type": "word",
+        "location": "102:5:1",
+        "word": "كَلَّا",
+        "qpcV2": "ﲣ",
+        "qpcV1": "ﮛ"
+      },
+      {
+        "type": "word",
+        "location": "102:5:2",
+        "word": "لَوْ",
+        "qpcV2": "ﲤ",
+        "qpcV1": "ﮜ"
+      },
+      {
+        "type": "word",
+        "location": "102:5:3",
+        "word": "تَعْلَمُونَ",
+        "qpcV2": "ﲥ",
+        "qpcV1": "ﮝ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "102:5:4",
+        "word": "عِلْمَ",
+        "qpcV2": "ﲦ",
+        "qpcV1": "ﮞ"
+      },
+      {
+        "type": "word",
+        "location": "102:5:5",
+        "word": "ٱلْيَقِينِ",
+        "qpcV2": "ﲧ ﲨ",
+        "qpcV1": "ﮟ"
+      },
+      {
+        "type": "word",
+        "location": "102:6:1",
+        "word": "لَتَرَوُنَّ",
+        "qpcV2": "ﲩ",
+        "qpcV1": "ﮡ"
+      },
+      {
+        "type": "word",
+        "location": "102:6:2",
+        "word": "ٱلْجَحِيمَ",
+        "qpcV2": "ﲪ ﲫ",
+        "qpcV1": "ﮢ"
+      },
+      {
+        "type": "word",
+        "location": "102:7:1",
+        "word": "ثُمَّ",
+        "qpcV2": "ﲬ",
+        "qpcV1": "ﮤ"
+      },
+      {
+        "type": "word",
+        "location": "102:7:2",
+        "word": "لَتَرَوُنَّهَا",
+        "qpcV2": "ﲭ",
+        "qpcV1": "ﮥ"
+      }
+    ],
+    [
+      {
+        "type": "word",
+        "location": "102:7:3",
+        "word": "عَيْنَ",
+        "qpcV2": "ﲮ",
+        "qpcV1": "ﮦ"
+      },
+      {
+        "type": "word",
+        "location": "102:7:4",
+        "word": "ٱلْيَقِينِ",
+        "qpcV2": "ﲯ ﲰ",
+        "qpcV1": "ﮧ"
+      },
+      {
+        "type": "word",
+        "location": "102:8:1",
+        "word": "ثُمَّ",
+        "qpcV2": "ﲱ",
+        "qpcV1": "ﮩ"
+      },
+      {
+        "type": "word",
+        "location": "102:8:2",
+        "word": "لَتُسْـَٔلُنَّ",
+        "qpcV2": "ﲲ",
+        "qpcV1": "ﮪ"
+      },
+      {
+        "type": "word",
+        "location": "102:8:3",
+        "word": "يَوْمَئِذٍ",
+        "qpcV2": "ﲳ",
+        "qpcV1": "ﮫ"
+      },
+      {
+        "type": "word",
+        "location": "102:8:4",
+        "word": "عَنِ",
+        "qpcV2": "ﲴ",
+        "qpcV1": "ﮬ"
+      },
+      {
+        "type": "word",
+        "location": "102:8:5",
+        "word": "ٱلنَّعِيمِ",
+        "qpcV2": "ﲵ ﲶ",
+        "qpcV1": "ﮭ"
+      }
+    ]
+  ]
+}

@@ -1,18 +1,25 @@
 <script lang="ts">
 	import ArabicService from '$lib/services/arabic';
 	import QPCFontProvider from '$lib/services/font-provider';
-	import { onMount, untrack } from 'svelte';
+	import { onMount } from 'svelte';
 
-	let page = 4;
-	let pageData: any = $state(null);
+	const qpcVersion: '1' | '2' = '2';
+	const SURAH_HEADER_FONT = 'surahs';
+	const BASMALA_FONT = QPCFontProvider.getBasmalaFont(qpcVersion);
+
+	let page = 602;
+	let lines = $state<any[][] | null>(null);
+	let pageSurah = $state<number | null>(null);
 	let containerRef: HTMLDivElement;
 	let pageRef: HTMLDivElement;
 	let scale = $state(1);
 
+	let hasMounted = false;
+
 	// Ratio A4 : 210mm x 297mm = 0.707
 	const A4_RATIO = 210 / 297;
-	const BASE_WIDTH = 794; // Largeur de base en pixels (équivalent A4 à 96 DPI)
-	const BASE_HEIGHT = 1123; // Hauteur de base en pixels
+	const BASE_WIDTH = 794; // Base width in pixels (A4 at 96 DPI)
+	const BASE_HEIGHT = 1123; // Base height in pixels
 
 	function updateScale() {
 		if (!containerRef || !pageRef) return;
@@ -21,23 +28,112 @@
 		const containerWidth = containerRect.width;
 		const containerHeight = containerRect.height;
 
-		// Calculer le scale basé sur le ratio A4
 		const scaleByWidth = containerWidth / BASE_WIDTH;
 		const scaleByHeight = containerHeight / BASE_HEIGHT;
 
-		// Prendre le plus petit scale pour que la page reste entièrement visible
 		const newScale = Math.min(scaleByWidth, scaleByHeight, 1);
 		scale = newScale;
 	}
 
-	onMount(() => {
-		fetch(`/mushaf-layout/page-${page}.json`)
-			.then((res) => res.json())
-			.then((data) => {
-				pageData = data;
+	async function loadPageLines(pageNumber: number) {
+		const key = `/mushaf/page-${String(pageNumber).padStart(3, '0')}.json`;
+		const loader = await (await fetch(key)).json();
+
+		if (!loader) {
+			console.warn(`Mushaf lines file missing for page ${pageNumber}`);
+			return;
+		}
+
+		try {
+			const rawLines = Array.isArray(loader.lines) ? loader.lines : [];
+			let detectedSurah: number | null = null;
+
+			const hydratedLines = rawLines.map((line: any) => {
+				const entries = Array.isArray(line) ? line : [];
+				return entries.map((entry: any) => {
+					if (entry.type === 'word' && entry.location) {
+						const parts = String(entry.location).split(':');
+						const surah = Number(parts[0]);
+						const verse = Number(parts[1]);
+						const hasValidLocation = Number.isFinite(surah) && Number.isFinite(verse);
+						const fontName = hasValidLocation
+							? QPCFontProvider.getFontNameForVerse(surah, verse, qpcVersion)
+							: QPCFontProvider.getFontNameForVerse(1, 1, qpcVersion);
+						const glyph = qpcVersion === '2' ? entry.qpcV2 : entry.qpcV1;
+
+						if (detectedSurah === null && Number.isFinite(surah)) {
+							detectedSurah = surah;
+						}
+
+						return {
+							...entry,
+							surah,
+							verse,
+							font: fontName,
+							qpc: glyph ?? entry.word ?? entry.qpc ?? ''
+						};
+					}
+
+					if (entry.type === 'basmala') {
+						const glyph = qpcVersion === '2' ? entry.qpcV2 : entry.qpcV1;
+
+						return {
+							...entry,
+							font: BASMALA_FONT,
+							qpc: glyph ?? entry.word ?? entry.qpc ?? ''
+						};
+					}
+
+					if (entry.type === 'surah-header') {
+						const surahNumber = entry.surah;
+						console.log('Surah header detected for surah number:', surahNumber, entry);
+
+						if (detectedSurah === null && Number.isFinite(surahNumber)) {
+							detectedSurah = surahNumber;
+						}
+
+						return {
+							...entry,
+							font: SURAH_HEADER_FONT,
+							surahNumber,
+							qpc: entry.surah
+						};
+					}
+
+					return {
+						...entry,
+						qpc: entry.qpc ?? ''
+					};
+				});
 			});
 
-		// Observer le redimensionnement
+			const fallbackSurah =
+				detectedSurah ??
+				hydratedLines
+					.flat()
+					.find(
+						(item: any) =>
+							item?.type === 'surah-header' &&
+							typeof item.surahNumber === 'number' &&
+							Number.isFinite(item.surahNumber)
+					)?.surahNumber ??
+				null;
+
+			lines = hydratedLines;
+			pageSurah = fallbackSurah;
+			updateScale();
+		} catch (error) {
+			console.error(`Failed to load mushaf lines for page ${pageNumber}`, error);
+			lines = [];
+			pageSurah = null;
+		}
+	}
+
+	onMount(() => {
+		hasMounted = true;
+		loadPageLines(page);
+
+		// Observe resizing to keep the page within the viewport
 		const resizeObserver = new ResizeObserver(() => {
 			updateScale();
 		});
@@ -46,191 +142,15 @@
 			resizeObserver.observe(containerRef);
 		}
 
-		// Cleanup
 		return () => {
 			resizeObserver.disconnect();
 		};
 	});
 
-	const getLines = $derived(() => {
-		if (!pageData) return [];
-		let lines: any[] = [];
-
-		untrack(() => {
-			let currentSurahNumber: number | null = null;
-			let lineOffset = 0;
-
-			// Parcourir tous les versets
-			pageData.verses.forEach((verse: any, verseIndex: number) => {
-				const verseSurahNumber = verse.surahNumber;
-
-				// Vérifier si on change de sourate
-				if (currentSurahNumber !== null && currentSurahNumber !== verseSurahNumber) {
-					// Ajouter deux lignes d'espacement pour le changement de sourate
-
-					// Ligne 1 : Numéro de sourate (optionnel, vous pouvez la personnaliser)
-					lines.push([
-						{
-							qpc: verseSurahNumber.toString().padStart(3, '0'),
-							font: 'surahs',
-							isSurahHeader: true
-						}
-					]);
-					lineOffset++;
-
-					// Ligne 2 : Basmala
-					lines.push([
-						{
-							qpc: QPCFontProvider.getBasmalaGlyph('2'),
-							font: QPCFontProvider.getBasmalaFont('2'),
-							isBasmala: true
-						}
-					]);
-					lineOffset++;
-				}
-
-				currentSurahNumber = verseSurahNumber;
-
-				// Fusionne le numéro du verset avec le dernier mot du verset
-				// pour éviter que le numéro de verset prenne trop de place
-				if (verse.words.length > 1) {
-					verse.words[verse.words.length - 2].qpc += ' ' + verse.words[verse.words.length - 1].qpc;
-					verse.words.pop();
-				}
-
-				// Traiter tous les mots du verset
-				verse.words.forEach((word: any) => {
-					const targetLineIndex = word.line + lineOffset;
-
-					// S'assurer que le tableau de lignes est assez grand
-					while (lines.length <= targetLineIndex) {
-						lines.push([]);
-					}
-
-					// Ajouter le mot à la ligne correspondante
-					lines[targetLineIndex].push({
-						qpc: word.qpc,
-						font: QPCFontProvider.getFontNameForVerse(verse.surahNumber, verse.verseNumber, '2'),
-						isWord: true,
-						location: word.location
-					});
-				});
-			});
-
-			// Supprime les lignes vides éventuelles
-			lines = lines.filter((line) => line.length > 0);
-
-			// Si on a que 13 lignes, ça veut dire que les premières lignes sont le début de la sourate
-			// ou les dernières lignes sont le debut de la sourate suivante.
-			if (lines.length === 13) {
-				const firstVerse = pageData.verses[0];
-				console.log('Premier verset de la page:', firstVerse);
-
-				// Vérifie si le premier verset est le premier verset de la sourate
-				if (firstVerse.verseNumber === 1) {
-					// Ajoute une ligne vide au début (basmala)
-					lines.unshift([
-						{
-							qpc: QPCFontProvider.getBasmalaGlyph('2'),
-							font: QPCFontProvider.getBasmalaFont('2'),
-							isBasmala: true
-						}
-					]);
-					// Ajoute encore une ligne avec le numéro de sourate
-					lines.unshift([
-						{
-							qpc: pageData.verses[0].surahNumber.toString().padStart(3, '0'),
-							font: 'surahs',
-							isSurahHeader: true
-						}
-					]);
-				} else {
-					// Ajout deux nouvelles lignes à la fin:
-					// une ligne pour le numéro de sourate (sourate suivante)
-					lines.push([
-						{
-							qpc: (pageData.verses[pageData.verses.length - 1].surahNumber + 1)
-								.toString()
-								.padStart(3, '0'),
-							font: 'surahs',
-							isSurahHeader: true
-						}
-					]);
-					// une ligne pour la basmala
-					lines.push([
-						{
-							qpc: QPCFontProvider.getBasmalaGlyph('2'),
-							font: QPCFontProvider.getBasmalaFont('2'),
-							isBasmala: true
-						}
-					]);
-				}
-			}
-
-			// Si on a que 14 lignes, alors soit ça veut dire qu'il manque une basmala en première ligne,
-			// soit qu'il manque un numéro de sourate en dernière ligne.
-			// Si on est au début d'une sourate sur cette page, alors c'est qu'il manque la basmala
-			if (lines.length === 14) {
-				const firstVerse = pageData.verses[0];
-				console.log('Premier verset de la page:', firstVerse);
-				if (firstVerse.verseNumber === 1 && firstVerse.surahNumber !== 9) {
-					// Ajoute une ligne vide au début (basmala)
-					lines.unshift([
-						{
-							qpc: QPCFontProvider.getBasmalaGlyph('2'),
-							font: QPCFontProvider.getBasmalaFont('2'),
-							isBasmala: true
-						}
-					]);
-					console.log('Ajout de la basmala au début');
-				} else if (firstVerse.surahNumber === 9) {
-					// Si on est sur la sourate 9, pas de basmala, mais on ajoute le numéro de sourate au début
-					lines.unshift([
-						{
-							qpc: firstVerse.surahNumber.toString().padStart(3, '0'),
-							font: 'surahs',
-							isSurahHeader: true
-						}
-					]);
-				} else {
-					// Ajoute une ligne avec le numéro de sourate à la fin
-					const lastVerse = pageData.verses[pageData.verses.length - 1];
-					lines.push([
-						{
-							qpc: lastVerse.surahNumber.toString().padStart(3, '0'),
-							font: 'surahs',
-							isSurahHeader: true
-						}
-					]);
-					console.log('Ajout du numéro de sourate à la fin');
-				}
-			}
-
-			// Si on a que 6 ou 7 lignes, c'est qu'on est sur les deux premières pages (page 1 ou 2)
-			// On ajoute la basmala en première ligne pour la page 2, et le numéro de sourate pour les deux pages
-			if (lines.length === 7 || lines.length === 6) {
-				if (page === 2) {
-					lines.unshift([
-						{
-							qpc: QPCFontProvider.getBasmalaGlyph('2'),
-							font: QPCFontProvider.getBasmalaFont('2'),
-							isBasmala: true
-						}
-					]);
-				}
-
-				lines.unshift([
-					{
-						qpc: pageData.verses[0].surahNumber.toString().padStart(3, '0'),
-						font: 'surahs',
-						isSurahHeader: true
-					}
-				]);
-			}
-		});
-
-		console.log('Lignes générées:', lines);
-		return lines;
+	$effect(() => {
+		if (!hasMounted) return;
+		const currentPage = page;
+		loadPageLines(currentPage);
 	});
 </script>
 
@@ -250,61 +170,65 @@
 			aspect-ratio: {A4_RATIO};
 		"
 	>
-		{#if pageData}
-			{@const allLines = getLines()}
-			{#each Object.entries(allLines) as [lineNumber, words], index}
+		{#if lines !== null}
+			{@const allLines = lines}
+			{#each Object.entries(allLines) as [lineNumber, entries], index}
 				{@const nextLine = allLines[index + 1]}
 				{@const nextLineHasSurahHeader =
-					nextLine && nextLine.some((word: any) => word.isSurahHeader)}
-				{@const currentLineHasSurahHeader = words.some((word: any) => word.isSurahHeader)}
-				<!-- page > 2: les deux premières page du mushaf sont spéciales (cercles donc justify-center) -->
+					nextLine && nextLine.some((entry: any) => entry.type === 'surah-header')}
 				{@const shouldJustify =
-					page > 2 && !nextLineHasSurahHeader && words.some((word: any) => word.isWord)}
+					page > 2 &&
+					!nextLineHasSurahHeader &&
+					entries.some((entry: any) => entry.type === 'word')}
 
 				<div
 					class={'flex w-full flex-row  ' + (shouldJustify ? 'justify-between' : 'justify-center')}
 					dir="rtl"
 					data-testid={'line-' + lineNumber}
 				>
-					{#each words as word}
-						{#if word.isSurahHeader}
+					{#each entries as entry}
+						{#if entry.type === 'surah-header'}
 							<div
 								class={'text-6xl m-2 text-center w-full h-8  ' +
 									(page > 2 ? 'relative' : 'absolute top-0')}
-								style="font-family: {word.font}"
+								style="font-family: {entry.font}"
 								dir="ltr"
 							>
 								<img
 									src="/assets/surah-header.jpg"
-									alt="Bannière"
+									alt="Banniere"
 									class="absolute inset-0 z-0 w-full object-cover"
 								/>
-								<span class="z-10 absolute inset-0 top-2 scale-120">{word.qpc}</span>
+								<span class="z-10 absolute inset-0 top-2 scale-120">{entry.qpc}</span>
 							</div>
-						{:else if word.isBasmala}
-							<div class="text-3xl m-2 pt-3 text-center w-full" style="font-family: {word.font}">
-								{word.qpc}
+						{:else if entry.type === 'basmala'}
+							<div
+								class="text-3xl m-2 pt-3 text-center w-full"
+								dir="ltr"
+								style="font-family: {entry.font}"
+							>
+								{entry.qpc}
 							</div>
-						{:else}
+						{:else if entry.type === 'word'}
 							<div
 								class={shouldJustify ? 'text-4xl' : 'text-4xl m-1'}
-								style="font-family: {word.font}"
+								style="font-family: {entry.font}"
 							>
-								{word.qpc}
+								{entry.qpc}
 							</div>
 						{/if}
 					{/each}
 				</div>
 			{/each}
 
-			<!-- Pied de page -->
+			<!-- Footer -->
 			<div class="absolute bottom-2 left-0 right-0">
 				<div class="flex justify-between text-sm text-gray-500 px-2">
 					<div>Page {page}</div>
 					<div class="text-black scale-200">
 						{ArabicService.latinToArabicNumbers(page)}
 					</div>
-					<div>Sourate {pageData.verses[0].surahNumber}</div>
+					<div>Sourate {pageSurah ?? '?'}</div>
 				</div>
 			</div>
 		{/if}
