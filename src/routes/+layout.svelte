@@ -19,7 +19,7 @@
 </svelte:head>
 
 {#if !isFontLoaded}
-	<div class="h-screen w-screen flex items-center justify-center">Loading fonts...</div>
+	<div class="h-screen w-screen flex items-center justify-center">Chargement des polices...</div>
 {:else}
 	<div class="h-screen w-screen">
 		{@render children?.()}

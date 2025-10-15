@@ -7,7 +7,7 @@
 	const SURAH_HEADER_FONT = 'surahs';
 	const BASMALA_FONT = QPCFontProvider.getBasmalaFont(qpcVersion);
 
-	let page = 602;
+	let page = 599;
 	let lines = $state<any[][] | null>(null);
 	let pageSurah = $state<number | null>(null);
 	let containerRef: HTMLDivElement;
@@ -175,12 +175,18 @@
 			{#each Object.entries(allLines) as [lineNumber, entries], index}
 				{@const nextLine = allLines[index + 1]}
 				{@const nextLineHasSurahHeader =
-					nextLine && nextLine.some((entry: any) => entry.type === 'surah-header')}
+					nextLine && nextLine.some((entry) => entry.type === 'surah-header')}
 				{@const shouldJustify =
+					// On ne justifie pas les deux premières pages (en forme de cercle)
 					page > 2 &&
+					// On ne justifie pas les lignes qui sont suivies d'une entête de sourate
+					// (= dernière ligne d'une sourate)
 					!nextLineHasSurahHeader &&
-					entries.some((entry: any) => entry.type === 'word')}
+					// Pour toutes les dernières pages du mushaf, on centre les dernières lignes
+					// qui sont la fin des petites sourates (les justifiers crée de trop grands espaces)
+					(lineNumber != '14' || page <= 599)}
 
+				<!-- Ligne du mushaf -->
 				<div
 					class={'flex w-full flex-row  ' + (shouldJustify ? 'justify-between' : 'justify-center')}
 					dir="rtl"
