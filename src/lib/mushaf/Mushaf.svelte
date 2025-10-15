@@ -2,7 +2,7 @@
 	import { BasmalaLine, SurahHeaderLine, TextLine } from '$lib/classes/Line';
 	import Page from '$lib/classes/Page';
 	import ArabicService from '$lib/services/arabic';
-	import qpcFontProvider from '$lib/services/fontProvider.svelte';
+	import qpcFontProvider from '$lib/services/fontProvider';
 	import { onMount } from 'svelte';
 
 	const qpcVersion: '1' | '2' = '2';

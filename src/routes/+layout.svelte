@@ -2,7 +2,7 @@
 	import '../app.css';
 	import favicon from '$lib/assets/favicon.svg';
 	import { onMount } from 'svelte';
-	import QPCFontProvider from '$lib/services/fontProvider.svelte';
+	import QPCFontProvider from '$lib/services/fontProvider';
 
 	let { children } = $props();
 
