@@ -1,13 +1,13 @@
 <script lang="ts">
 	import ArabicService from '$lib/services/arabic';
-	import QPCFontProvider from '$lib/services/font-provider';
+	import QPCFontProvider from '$lib/services/fontProvider';
 	import { onMount } from 'svelte';
 
 	const qpcVersion: '1' | '2' = '2';
 	const SURAH_HEADER_FONT = 'surahs';
 	const BASMALA_FONT = QPCFontProvider.getBasmalaFont(qpcVersion);
 
-	let page = 599;
+	let page = 604;
 	let lines = $state<any[][] | null>(null);
 	let pageSurah = $state<number | null>(null);
 	let containerRef: HTMLDivElement;
@@ -55,10 +55,8 @@
 						const parts = String(entry.location).split(':');
 						const surah = Number(parts[0]);
 						const verse = Number(parts[1]);
-						const hasValidLocation = Number.isFinite(surah) && Number.isFinite(verse);
-						const fontName = hasValidLocation
-							? QPCFontProvider.getFontNameForVerse(surah, verse, qpcVersion)
-							: QPCFontProvider.getFontNameForVerse(1, 1, qpcVersion);
+						const fontName = QPCFontProvider.getFontNameForVerse(surah, verse, qpcVersion);
+
 						const glyph = qpcVersion === '2' ? entry.qpcV2 : entry.qpcV1;
 
 						if (detectedSurah === null && Number.isFinite(surah)) {
@@ -217,7 +215,7 @@
 							</div>
 						{:else if entry.type === 'word'}
 							<div
-								class={shouldJustify ? 'text-4xl' : 'text-4xl m-1'}
+								class={shouldJustify ? 'text-4xl text-nowrap' : 'text-4xl m-1 text-nowrap'}
 								style="font-family: {entry.font}"
 							>
 								{entry.qpc}
@@ -229,7 +227,7 @@
 
 			<!-- Footer -->
 			<div class="absolute bottom-2 left-0 right-0">
-				<div class="flex justify-between text-sm text-gray-500 px-2">
+				<div class="flex justify-between text-sm text-gray-800 px-2">
 					<div>Page {page}</div>
 					<div class="text-black scale-200">
 						{ArabicService.latinToArabicNumbers(page)}
