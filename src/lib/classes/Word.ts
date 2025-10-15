@@ -1,4 +1,4 @@
-class Word {
+export default class Word {
 	location: string; // e.g., "2:255:1"
 	word: string; // The actual Arabic word
 	qpcV1: string; // Glyph for QPC version 1
@@ -9,5 +9,15 @@ class Word {
 		this.word = word;
 		this.qpcV1 = qpcV1;
 		this.qpcV2 = qpcV2;
+	}
+
+	getSurahNumber(): number | null {
+		const [surah] = this.location.split(':').map(Number);
+		return !isNaN(surah) ? surah : null;
+	}
+
+	getVerseNumber(): number | null {
+		const [, verse] = this.location.split(':').map(Number);
+		return !isNaN(verse) ? verse : null;
 	}
 }

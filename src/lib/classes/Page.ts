@@ -1,5 +1,9 @@
+import type Line from './Line';
+import { BasmalaLine, SurahHeaderLine, TextLine } from './Line';
+import Word from './Word';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
-class Page {
+export default class Page {
 	lines: Line[];
 
 	constructor(public pageNumber: number) {
@@ -9,18 +13,21 @@ class Page {
 	static fromJSON(data: any): Page {
 		const page = new Page(data.pageNumber);
 		page.lines = data.lines.map((lineData: any) => {
-			switch (lineData.type) {
-				case 'text':
-					return new TextLine(
-						lineData.words.map(
-							(wordData: any) =>
-								new Word(wordData.location, wordData.word, wordData.qpcV1, wordData.qpcV2)
-						)
+			const lineType = lineData.type;
+
+			switch (lineType) {
+				case 'text': {
+					const words = lineData.words.map(
+						(wordData: any) =>
+							new Word(wordData.location, wordData.word, wordData.qpcV1, wordData.qpcV2)
 					);
+
+					return new TextLine(words, lineData.text, lineData.verseRange);
+				}
 				case 'basmala':
 					return new BasmalaLine();
 				case 'surah-header':
-					return new SurahHeaderLine(lineData.surahNumber);
+					return new SurahHeaderLine(lineData.surah);
 				default:
 					throw new Error(`Unknown line type: ${lineData.type}`);
 			}

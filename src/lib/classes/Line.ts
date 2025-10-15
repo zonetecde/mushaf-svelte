@@ -1,4 +1,6 @@
-class Line {
+import type Word from './Word';
+
+export default class Line {
 	type: 'text' | 'basmala' | 'surah-header';
 
 	constructor(type: 'text' | 'basmala' | 'surah-header') {
@@ -6,7 +8,7 @@ class Line {
 	}
 }
 
-class SurahHeaderLine extends Line {
+export class SurahHeaderLine extends Line {
 	surahNumber: number;
 
 	constructor(surahNumber: number) {
@@ -15,31 +17,20 @@ class SurahHeaderLine extends Line {
 	}
 }
 
-class TextLine extends Line {
+export class TextLine extends Line {
 	words: Word[];
+	text: string;
+	verseRange: string;
 
-	constructor(words: Word[]) {
+	constructor(words: Word[], text: string = '', verseRange: string = '') {
 		super('text');
 		this.words = words;
+		this.text = text;
+		this.verseRange = verseRange;
 	}
 }
 
-class BasmalaLine extends Line {
-	constructor() {
-		super('basmala');
-	}
-}
-
-class TextLine extends Line {
-	words: Word[];
-
-	constructor(words: Word[]) {
-		super('text');
-		this.words = words;
-	}
-}
-
-class BasmalaLine extends Line {
+export class BasmalaLine extends Line {
 	constructor() {
 		super('basmala');
 	}
