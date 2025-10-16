@@ -97,9 +97,7 @@
 
 <div
 	bind:this={containerRef}
-	class={'h-full w-full flex items-center ' +
-		alignmentClass +
-		' bg-gray-100 overflow-hidden relative'}
+	class={'h-full w-full flex items-center ' + alignmentClass + ' overflow-hidden relative'}
 >
 	<div
 		style="

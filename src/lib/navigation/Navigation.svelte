@@ -3,7 +3,7 @@
 
 	let { pageNumber = $bindable() }: { pageNumber: number } = $props();
 
-	let isOpened = $state(true);
+	let isOpened = $state(false);
 	let choix: 'Sourate' | 'Juz' | 'Hizb' | 'Page' = $state('Sourate');
 
 	function handleOptionClick(page: number): any {

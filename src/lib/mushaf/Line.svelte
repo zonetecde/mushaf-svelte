@@ -44,17 +44,16 @@
 >
 	{#if line.type === 'surah-header'}
 		<div
-			class={'text-6xl m-2 text-center w-full h-8  ' +
-				(pageNumber > 2 ? 'relative' : 'absolute top-0')}
+			class={'text-6xl text-center w-full h-18 ' + (pageNumber > 2 ? 'relative' : 'absolute top-0')}
 			style="font-family: {SURAH_HEADER_FONT}"
 			dir="ltr"
 		>
 			<img
 				src="/assets/surah-header.jpg"
-				alt="Banniere"
-				class="absolute inset-0 z-0 w-full object-cover"
+				alt="Surah Header Background"
+				class="absolute inset-0 w-full h-full"
 			/>
-			<span class="z-10 absolute inset-0 top-2 scale-120"
+			<span class="z-10 absolute inset-0 scale-120 mt-3"
 				>{(line as SurahHeaderLine).surahNumber}</span
 			>
 		</div>
