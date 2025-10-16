@@ -3,7 +3,7 @@
 
 	let { pageNumber = $bindable() }: { pageNumber: number } = $props();
 
-	let isOpened = $state(false);
+	let isOpened = $state(true);
 	let choix: 'Sourate' | 'Juz' | 'Hizb' | 'Page' = $state('Sourate');
 
 	function handleOptionClick(page: number): any {
@@ -95,10 +95,17 @@
 				{:else}
 					{#each options as option}
 						<button
-							class="w-full mx-auto rounded p-2 m-1 bg-white border border-gray-300 hover:bg-gray-100 cursor-pointer"
+							class="w-full mx-auto text-left rounded p-2 m-1 bg-white border border-gray-300 hover:bg-gray-100 cursor-pointer"
 							onclick={() => handleOptionClick(option.page)}
 						>
-							{option.id}
+							<span>
+								{option.id}
+							</span>
+							{#if choix !== 'Page'}
+								<span class="text-gray-600 float-right">
+									{option.page}
+								</span>
+							{/if}
 						</button>
 					{/each}
 				{/if}
