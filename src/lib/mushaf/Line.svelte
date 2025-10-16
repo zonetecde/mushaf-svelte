@@ -19,21 +19,26 @@
 	const SURAH_HEADER_FONT = 'surahs';
 	const BASMALA_FONT = qpcFontProvider.getBasmalaFont(qpcVersion);
 
-	const nextLineHasSurahHeader = nextLine && nextLine.type === 'surah-header';
-	const shouldJustify =
+	const nextLineHasSurahHeader = $derived(() => {
+		return nextLine && nextLine.type === 'surah-header';
+	});
+	let shouldJustify = $derived(() => {
 		// On ne justifie pas les deux premières pages (en forme de cercle)
-		pageNumber > 2 &&
-		// On ne justifie pas les lignes qui sont suivies d'une entête de sourate
-		// (= dernière ligne d'une sourate)
-		!nextLineHasSurahHeader &&
-		// Pour toutes les dernières pages du mushaf, on centre les dernières lignes
-		// qui sont la fin des petites sourates (les justifiers crée de trop grands espaces)
-		(lineNumber != '14' || pageNumber <= 599);
+		return (
+			pageNumber > 2 &&
+			// On ne justifie pas les lignes qui sont suivies d'une entête de sourate
+			// (= dernière ligne d'une sourate)
+			!nextLineHasSurahHeader() &&
+			// Pour toutes les dernières pages du mushaf, on centre les dernières lignes
+			// qui sont la fin des petites sourates (les justifiers crée de trop grands espaces)
+			(lineNumber != '14' || pageNumber <= 599)
+		);
+	});
 </script>
 
 <!-- Ligne du mushaf -->
 <div
-	class={'flex w-full flex-row  ' + (shouldJustify ? 'justify-between' : 'justify-center')}
+	class={'flex w-full flex-row  ' + (shouldJustify() ? 'justify-between' : 'justify-center')}
 	dir="rtl"
 	data-testid={'line-' + lineNumber}
 >
@@ -60,7 +65,7 @@
 	{:else if line.type === 'text'}
 		{#each (line as TextLine).words as word}
 			<div
-				class={shouldJustify ? 'text-4xl text-nowrap' : 'text-4xl m-1 text-nowrap'}
+				class={shouldJustify() ? 'text-4xl text-nowrap' : 'text-4xl m-1 text-nowrap'}
 				style="font-family: {qpcFontProvider.getFontNameForWord(word, qpcVersion)}"
 			>
 				{qpcVersion === '2' ? word.qpcV2 : word.qpcV1}

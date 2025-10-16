@@ -74,7 +74,6 @@
 		// Charger les données QPC
 		qpcFontProvider.loadQPC2Data();
 
-		loadPageLines(pageNumber);
 		updateScale();
 
 		// Observe resizing to keep the page within the viewport
@@ -89,6 +88,10 @@
 		return () => {
 			resizeObserver.disconnect();
 		};
+	});
+
+	$effect(() => {
+		loadPageLines(pageNumber);
 	});
 </script>
 

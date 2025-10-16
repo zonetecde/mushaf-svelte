@@ -1,0 +1,458 @@
+[
+  {
+    "id": "1. Al-Fatiha",
+    "page": 1
+  },
+  {
+    "id": "2. Al-Baqara",
+    "page": 2
+  },
+  {
+    "id": "3. Aal-Imran",
+    "page": 50
+  },
+  {
+    "id": "4. An-Nisaa'",
+    "page": 77
+  },
+  {
+    "id": "5. Al-Ma'ida",
+    "page": 106
+  },
+  {
+    "id": "6. Al-An'am",
+    "page": 128
+  },
+  {
+    "id": "7. Al-A'raf",
+    "page": 151
+  },
+  {
+    "id": "8. Al-Anfal",
+    "page": 177
+  },
+  {
+    "id": "9. Al-Tawba",
+    "page": 187
+  },
+  {
+    "id": "10. Yunus",
+    "page": 208
+  },
+  {
+    "id": "11. Hud",
+    "page": 221
+  },
+  {
+    "id": "12. Yusuf",
+    "page": 235
+  },
+  {
+    "id": "13. Ar-Ra'd",
+    "page": 249
+  },
+  {
+    "id": "14. Ibrahim",
+    "page": 255
+  },
+  {
+    "id": "15. Al-Hijr",
+    "page": 262
+  },
+  {
+    "id": "16. An-Nahl",
+    "page": 267
+  },
+  {
+    "id": "17. Al-Israa",
+    "page": 282
+  },
+  {
+    "id": "18. Al-Kahf",
+    "page": 293
+  },
+  {
+    "id": "19. Maryam",
+    "page": 305
+  },
+  {
+    "id": "20. Ta-Ha",
+    "page": 312
+  },
+  {
+    "id": "21. Al-Anbiya",
+    "page": 322
+  },
+  {
+    "id": "22. Al-Hajj",
+    "page": 332
+  },
+  {
+    "id": "23. Al-Muminun",
+    "page": 342
+  },
+  {
+    "id": "24. An-Nur",
+    "page": 350
+  },
+  {
+    "id": "25. Al-Furqan",
+    "page": 359
+  },
+  {
+    "id": "26. Ash-Shuara",
+    "page": 367
+  },
+  {
+    "id": "27. An-Naml",
+    "page": 377
+  },
+  {
+    "id": "28. Al-Qasas",
+    "page": 385
+  },
+  {
+    "id": "29. Al-Ankabut",
+    "page": 396
+  },
+  {
+    "id": "30. Ar-Rum",
+    "page": 404
+  },
+  {
+    "id": "31. Luqman",
+    "page": 411
+  },
+  {
+    "id": "32. As-Sajdah",
+    "page": 415
+  },
+  {
+    "id": "33. Al-Ahzab",
+    "page": 418
+  },
+  {
+    "id": "34. Saba",
+    "page": 428
+  },
+  {
+    "id": "35. Fatir",
+    "page": 434
+  },
+  {
+    "id": "36. Yasin",
+    "page": 440
+  },
+  {
+    "id": "37. As-Saffat",
+    "page": 446
+  },
+  {
+    "id": "38. Sad",
+    "page": 453
+  },
+  {
+    "id": "39. Az-Zumar",
+    "page": 458
+  },
+  {
+    "id": "40. Ghafir",
+    "page": 467
+  },
+  {
+    "id": "41. Fussilat",
+    "page": 477
+  },
+  {
+    "id": "42. Ash-Shura",
+    "page": 483
+  },
+  {
+    "id": "43. Az-Zukhruf",
+    "page": 489
+  },
+  {
+    "id": "44. Ad-Dukhan",
+    "page": 496
+  },
+  {
+    "id": "45. Al-Jathiya",
+    "page": 499
+  },
+  {
+    "id": "46. Al-Ahqaf",
+    "page": 502
+  },
+  {
+    "id": "47. Muhammad",
+    "page": 507
+  },
+  {
+    "id": "48. Al-Fath",
+    "page": 511
+  },
+  {
+    "id": "49. Al-Hujurat",
+    "page": 515
+  },
+  {
+    "id": "50. Qaf",
+    "page": 518
+  },
+  {
+    "id": "51. Az-Zariyat",
+    "page": 520
+  },
+  {
+    "id": "52. At-Tur",
+    "page": 523
+  },
+  {
+    "id": "53. An-Najm",
+    "page": 526
+  },
+  {
+    "id": "54. Al-Qamar",
+    "page": 528
+  },
+  {
+    "id": "55. Ar-Rahman",
+    "page": 531
+  },
+  {
+    "id": "56. Al-Waqia",
+    "page": 534
+  },
+  {
+    "id": "57. Al-Hadid",
+    "page": 537
+  },
+  {
+    "id": "58. Al-Mujadilah",
+    "page": 542
+  },
+  {
+    "id": "59. Al-Hashr",
+    "page": 545
+  },
+  {
+    "id": "60. Al-Mumtahinah",
+    "page": 549
+  },
+  {
+    "id": "61. As-Saff",
+    "page": 551
+  },
+  {
+    "id": "62. Al-Jumu'ah",
+    "page": 553
+  },
+  {
+    "id": "63. Al-Munafiqun",
+    "page": 554
+  },
+  {
+    "id": "64. At-Taghabun",
+    "page": 556
+  },
+  {
+    "id": "65. At-Talaq",
+    "page": 558
+  },
+  {
+    "id": "66. At-Tahrim",
+    "page": 560
+  },
+  {
+    "id": "67. Al-Mulk",
+    "page": 562
+  },
+  {
+    "id": "68. Al-Qalam",
+    "page": 564
+  },
+  {
+    "id": "69. Al-Haqqah",
+    "page": 566
+  },
+  {
+    "id": "70. Al-Ma'arij",
+    "page": 568
+  },
+  {
+    "id": "71. Nuh",
+    "page": 570
+  },
+  {
+    "id": "72. Al-Jinn",
+    "page": 572
+  },
+  {
+    "id": "73. Al-Muzzammil",
+    "page": 574
+  },
+  {
+    "id": "74. Al-Muddaththir",
+    "page": 575
+  },
+  {
+    "id": "75. Al-Qiyamah",
+    "page": 577
+  },
+  {
+    "id": "76. Al-Insan",
+    "page": 578
+  },
+  {
+    "id": "77. Al-Mursalat",
+    "page": 580
+  },
+  {
+    "id": "78. An-Naba",
+    "page": 582
+  },
+  {
+    "id": "79. An-Naziat",
+    "page": 583
+  },
+  {
+    "id": "80. Abasa",
+    "page": 585
+  },
+  {
+    "id": "81. At-Takwir",
+    "page": 586
+  },
+  {
+    "id": "82. Al-Infitar",
+    "page": 587
+  },
+  {
+    "id": "83. Al-Mutaffifin",
+    "page": 587
+  },
+  {
+    "id": "84. Al-Inshiqaq",
+    "page": 589
+  },
+  {
+    "id": "85. Al-Buruj",
+    "page": 590
+  },
+  {
+    "id": "86. At-Tariq",
+    "page": 591
+  },
+  {
+    "id": "87. Al-Ala",
+    "page": 591
+  },
+  {
+    "id": "88. Al-Ghashiyah",
+    "page": 592
+  },
+  {
+    "id": "89. Al-Fajr",
+    "page": 593
+  },
+  {
+    "id": "90. Al-Balad",
+    "page": 594
+  },
+  {
+    "id": "91. Ash-Shams",
+    "page": 595
+  },
+  {
+    "id": "92. Al-Lail",
+    "page": 595
+  },
+  {
+    "id": "93. Ad-Duha",
+    "page": 596
+  },
+  {
+    "id": "94. Ash-Sharh",
+    "page": 596
+  },
+  {
+    "id": "95. At-Tin",
+    "page": 597
+  },
+  {
+    "id": "96. Al-Alaq",
+    "page": 597
+  },
+  {
+    "id": "97. Al-Qadr",
+    "page": 598
+  },
+  {
+    "id": "98. Al-Bayinah",
+    "page": 598
+  },
+  {
+    "id": "99. Az-Zalzalah",
+    "page": 599
+  },
+  {
+    "id": "100. Al-Adiyat",
+    "page": 599
+  },
+  {
+    "id": "101. Al-Qariah",
+    "page": 600
+  },
+  {
+    "id": "102. Al-Takathur",
+    "page": 600
+  },
+  {
+    "id": "103. Al-Asr",
+    "page": 601
+  },
+  {
+    "id": "104. Al-Humazah",
+    "page": 601
+  },
+  {
+    "id": "105. Al-Fil",
+    "page": 601
+  },
+  {
+    "id": "106. Quraish",
+    "page": 602
+  },
+  {
+    "id": "107. Al-Ma'un",
+    "page": 602
+  },
+  {
+    "id": "108. Al-Kauthar",
+    "page": 602
+  },
+  {
+    "id": "109. Al-Kafirun",
+    "page": 603
+  },
+  {
+    "id": "110. An-Nasr",
+    "page": 603
+  },
+  {
+    "id": "111. Al-Masad",
+    "page": 603
+  },
+  {
+    "id": "112. Al-Ikhlas",
+    "page": 604
+  },
+  {
+    "id": "113. Al-Falaq",
+    "page": 604
+  },
+  {
+    "id": "114. An-Nas",
+    "page": 604
+  }
+]
