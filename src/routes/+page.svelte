@@ -11,7 +11,7 @@
 </script>
 
 <div class="flex flex-row w-full h-full relative">
-	<Navigation bind:pageNumber />
+	<Navigation bind:pageNumber {doublePage} />
 
 	<div class="flex flex-col flex-1 h-full">
 		<div class="flex-1 overflow-hidden">
