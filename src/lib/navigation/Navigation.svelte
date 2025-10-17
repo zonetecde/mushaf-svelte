@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-	let { pageNumber = $bindable() }: { pageNumber: number } = $props();
+	let { pageNumber = $bindable(), doublePage }: { pageNumber: number; doublePage: boolean } =
+		$props();
 
 	let isOpened = $state(false);
 	let choix: 'Sourate' | 'Juz' | 'Hizb' | 'Page' = $state('Sourate');
 
 	function handleOptionClick(page: number): any {
-		if (page % 2 !== 1) page--;
+		if (page % 2 !== 1 && doublePage) page--;
 		pageNumber = page;
 	}
 
