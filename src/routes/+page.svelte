@@ -6,8 +6,7 @@
 
 	let pageNumber = 1;
 	let qpcVersion: '1' | '2' = '2';
-	let isNavigationOpened = false;
-	let doublePage = true;
+	let doublePage = false;
 </script>
 
 <div class="flex flex-row w-full h-full relative">
@@ -18,6 +17,6 @@
 			<Mushaf {pageNumber} {qpcVersion} {doublePage} />
 		</div>
 		<QuickNavigation bind:pageNumber {doublePage} />
-		<QuickSettings bind:doublePage />
+		<QuickSettings bind:doublePage bind:qpcVersion />
 	</div>
 </div>
