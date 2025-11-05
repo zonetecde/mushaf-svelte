@@ -39,4 +39,4 @@ Ces commandes installent les dépendances puis lancent le serveur en mode dével
 
 ## Hébergement
 
-La version en ligne est disponible sur <https://mondomaine.fr>.
+La version en ligne est disponible sur https://mushaf-svelte.vercel.app/.
