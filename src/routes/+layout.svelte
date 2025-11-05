@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import QPCFontProvider from '$lib/services/fontProvider';
 
-	const HEAD_TITLE = 'Mushaf Ihab - Lecture du mushaf Hafs par Assim';
+	const HEAD_TITLE = 'Mushaf Svelte - Lecture du mushaf Hafs par Assim';
 	const HEAD_DESCRIPTION =
 		'Application Svelte pour consulter le mushaf de Hafs par Assim dans une calligraphie uthmanienne, avec navigation rapide et sélection de la police QPC.';
 	const HEAD_KEYWORDS = 'mushaf,hafs,assim,coran,quran,qpc,svelte,lecture,uthmanienne';
