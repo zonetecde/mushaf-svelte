@@ -1,44 +1,34 @@
 # Mushaf Ihab
 
-Projet Svelte permettant de lire le mushaf de Hafs par Assim avec la calligraphie uthmanienne. L'application offre une navigation rapide (sourate, page, juz, hizb), une vue double page ou page simple et le choix de la version de la police QPC.
+Mushaf Ihab est une application Svelte dédiée à la lecture du mushaf de Hafs par Assim dans une calligraphie uthmanienne fidèle. L'interface a été pensée pour rester simple et rapide, tout en offrant plusieurs modes d'affichage et de navigation afin de retrouver instantanément la sourate, la page, le juz ou le hizb souhaité.
 
-## Apercu du projet
-- Interface Svelte reactive concue pour la lecture du mushaf.
-- Composants dedies (`src/lib/mushaf`) pour structurer pages, lignes et mots.
-- Donnees generees a partir du depot <https://github.com/zonetecde/mushaf-layout>.
+## Aperçu
 
-## Fonctionnalites principales
-- Navigation instantanee par sourate, page, juz ou hizb.
-- Affichage en double page ou page unique selon la preference.
-- Selection de la variante QPC souhaitee pour la police du mushaf.
-- Experience optimisee autour de la calligraphie uthmanienne.
+- Lecture Svelte réactive avec des composants spécialisés (`src/lib/mushaf`) pour les pages, lignes et mots.
+- Données générées via le dépôt compagnon : <https://github.com/zonetecde/mushaf-layout>.
+- Police QPC ajustable pour sélectionner la variante de graphie la plus adaptée.
 
-## Structure essentielle
-- `src/lib/mushaf` : composants Svelte pour le mushaf (page, ligne, navigation, footer).
-- `src/lib/classes` : classes TypeScript `Page`, `Line`, `Word` pour manipuler la structure du texte.
-- `static` : ressources statiques exposees telles que polices ou images.
-- `e2e` : tests end-to-end Playwright.
+## Fonctionnalités clés
 
-## Prise en main
+- Navigation rapide par sourate, page, juz ou hizb grâce aux outils intégrés.
+- Choix du mode de lecture : double page pour une vision d'ensemble ou page unique pour un focus maximal.
+- Respect de la calligraphie uthmanienne et rendu optimisé pour une lecture confortable.
+
+## Architecture en bref
+
+- `src/lib/mushaf` : composants Svelte (Mushaf, Page, Line, Word, Footer...) assurant l'affichage.
+- `src/lib/classes` : classes TypeScript `Page`, `Line`, `Word` structurant les données du mushaf.
+- `static` : ressources statiques, notamment polices et fichiers JSON de données.
+
+## Démarrer
+
 ```bash
 npm install
 npm run dev
 ```
-Le script `npm run dev` lance le serveur de developpement Vite avec SvelteKit.
 
-Pour une construction de production :
-```bash
-npm run build
-npm run preview
-```
+Ces commandes installent les dépendances puis lancent le serveur en mode développement.
 
-## Scripts npm utiles
-- `npm run dev` : demarrage du serveur de developpement.
-- `npm run build` : construction de la version production.
-- `npm run preview` : previsualisation locale de la build.
-- `npm run check` : verification Svelte + TypeScript.
-- `npm run lint` : verifications Prettier et ESLint.
-- `npm run test:e2e` : tests Playwright.
+## Hébergement
 
-## Hebergement
-Le site est heberge sur <https://mondomaine.fr>.
+La version en ligne est disponible sur <https://mondomaine.fr>.
