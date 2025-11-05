@@ -19,7 +19,7 @@
 	});
 </script>
 
-<div class="flex w-full h-full">
+<div class="flex h-full w-full flex-col items-center justify-center gap-6 md:flex-row md:items-stretch md:gap-8">
 	{#if doublePage}
 		<Page pageNumber={pageNumber + 1} {qpcVersion} alignment="end" />
 	{/if}

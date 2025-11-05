@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Mushaf from '$lib/mushaf/Mushaf.svelte';
 	import Navigation from '$lib/navigation/Navigation.svelte';
 	import QuickNavigation from '$lib/navigation/QuickNavigation.svelte';
@@ -6,17 +7,35 @@
 
 	let pageNumber = 1;
 	let qpcVersion: '1' | '2' = '2';
-	let doublePage = false;
+	let doublePagePreference = false;
+	let isMobile = false;
+
+	onMount(() => {
+		const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+		const updateIsMobile = () => {
+			isMobile = mediaQuery.matches;
+		};
+
+		updateIsMobile();
+		mediaQuery.addEventListener('change', updateIsMobile);
+
+		return () => mediaQuery.removeEventListener('change', updateIsMobile);
+	});
+
+	$: effectiveDoublePage = !isMobile && doublePagePreference;
 </script>
 
-<div class="flex flex-row w-full h-full relative">
-	<Navigation bind:pageNumber {doublePage} />
+<div class="relative flex h-full w-full flex-col md:flex-row">
+	<Navigation bind:pageNumber doublePage={effectiveDoublePage} {isMobile} />
 
-	<div class="flex flex-col flex-1 h-full">
-		<div class="flex-1 overflow-hidden">
-			<Mushaf {pageNumber} {qpcVersion} {doublePage} />
+	<div class="flex h-full flex-1 flex-col">
+		<div class="flex-1 overflow-hidden px-2 pb-32 pt-4 md:px-0 md:py-0">
+			<Mushaf {pageNumber} {qpcVersion} doublePage={effectiveDoublePage} />
 		</div>
-		<QuickNavigation bind:pageNumber {doublePage} />
-		<QuickSettings bind:doublePage bind:qpcVersion />
+		<div class="flex flex-col gap-2 md:relative md:gap-0">
+			<QuickNavigation bind:pageNumber doublePage={effectiveDoublePage} />
+			<QuickSettings bind:doublePage={doublePagePreference} bind:qpcVersion {isMobile} />
+		</div>
 	</div>
 </div>

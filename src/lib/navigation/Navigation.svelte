@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 
-	let { pageNumber = $bindable(), doublePage }: { pageNumber: number; doublePage: boolean } =
-		$props();
+	let {
+		pageNumber = $bindable(),
+		doublePage,
+		isMobile
+	}: { pageNumber: number; doublePage: boolean; isMobile: boolean } = $props();
 
 	let isOpened = $state(false);
 	let choix: 'Sourate' | 'Juz' | 'Hizb' | 'Page' = $state('Sourate');
@@ -10,6 +13,10 @@
 	function handleOptionClick(page: number): any {
 		if (page % 2 !== 1 && doublePage) page--;
 		pageNumber = page;
+
+		if (isMobile) {
+			isOpened = false;
+		}
 	}
 
 	async function getAvailableOptions(choix: string): Promise<{ id: string; page: number }[]> {
@@ -62,26 +69,29 @@
 
 {#if isOpened}
 	<div
-		class="w-1/5 z-5 h-full px-3 pt-6 overflow-hidden bg-gray-200 absolute flex flex-col left-0 top-0 bottom-0 border-r-2 border-gray-300"
+		class="fixed inset-0 z-50 flex h-full w-full flex-col overflow-hidden bg-gray-200 px-4 pt-16 shadow-xl sm:px-6 sm:pt-10 md:relative md:left-0 md:top-0 md:h-full md:w-72 md:border-r md:border-gray-300 md:px-3 md:pt-6 md:shadow md:inset-auto"
 		id="navigation"
 		transition:slide={{ axis: 'x' }}
+		role="dialog"
+		aria-modal="true"
 	>
 		<button
-			class="absolute top-2 right-2 cursor-pointer bg-gray-300 hover:bg-gray-400 duration-150 rounded-full px-1.5 pt-1.5 pb-0"
+			class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-gray-300 text-xl transition-colors duration-150 hover:bg-gray-400 md:right-2 md:top-2"
 			onclick={() => (isOpened = false)}
+			aria-label="Fermer la navigation"
 		>
 			<span class="material-icons">close</span>
 		</button>
 
-		<h2 class="text-lg font-bold mb-4 text-center">Navigation</h2>
+		<h2 class="mb-4 mt-2 text-center text-xl font-bold md:mt-0">Navigation</h2>
 
-		<div class="flex flex-row">
+		<div class="flex flex-wrap gap-2 md:flex-nowrap">
 			{#each ['Sourate', 'Juz', 'Hizb', 'Page'] as item}
 				<button
-					class={'flex-1 rounded p-2 m-1 cursor-pointer ' +
+					class={'flex-1 rounded border p-2 text-sm transition-colors duration-150 ' +
 						(choix === item
-							? 'hover:bg-blue-100 bg-blue-100 border border-blue-300'
-							: 'hover:bg-gray-100 bg-white border border-gray-300')}
+							? 'border-blue-300 bg-blue-100 hover:bg-blue-200'
+							: 'border-gray-300 bg-white hover:bg-gray-100')}
 					onclick={() => (choix = item as any)}
 				>
 					{item}
@@ -89,23 +99,19 @@
 			{/each}
 		</div>
 
-		<div class="flex flex-col overflow-y-auto overflow-x-hidden px-2">
+		<div class="mt-4 flex flex-col overflow-y-auto overflow-x-hidden px-1">
 			{#await getAvailableOptions(choix) then options}
 				{#if options.length === 0}
 					<p class="text-center text-gray-500 mt-4">Aucune option disponible</p>
 				{:else}
 					{#each options as option}
 						<button
-							class="w-full mx-auto text-left rounded p-2 m-1 bg-white border border-gray-300 hover:bg-gray-100 cursor-pointer"
+							class="mx-auto my-1 w-full rounded border border-gray-300 bg-white p-3 text-left text-sm transition-colors duration-150 hover:bg-gray-100"
 							onclick={() => handleOptionClick(option.page)}
 						>
-							<span>
-								{option.id}
-							</span>
+							<span>{option.id}</span>
 							{#if choix !== 'Page'}
-								<span class="text-gray-600 float-right">
-									{option.page}
-								</span>
+								<span class="float-right text-gray-600">{option.page}</span>
 							{/if}
 						</button>
 					{/each}
@@ -115,9 +121,10 @@
 	</div>
 {:else}
 	<button
-		class="absolute top-5 h-12 left-0 w-10 pr-1 bg-gray-300 z-5 flex items-center justify-center rounded-r-2xl cursor-pointer hover:bg-gray-400 duration-150"
+		class="fixed left-4 top-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 text-2xl shadow transition-colors duration-150 hover:bg-gray-400 md:absolute md:left-0 md:top-5 md:h-12 md:w-10 md:rounded-r-2xl md:rounded-l-none md:shadow-none"
 		onclick={() => (isOpened = true)}
 		transition:slide={{ axis: 'x' }}
+		aria-label="Ouvrir la navigation"
 	>
 		<span class="material-icons">menu</span>
 	</button>
