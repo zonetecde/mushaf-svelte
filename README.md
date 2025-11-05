@@ -2,6 +2,14 @@
 
 Mushaf Ihab est une application Svelte dédiée à la lecture du mushaf de Hafs par Assim dans une calligraphie uthmanienne fidèle. L'interface a été pensée pour rester simple et rapide, tout en offrant plusieurs modes d'affichage et de navigation afin de retrouver instantanément la sourate, la page, le juz ou le hizb souhaité.
 
+<p align="center">
+  <img  width="80%" alt="scr1" src="https://github.com/user-attachments/assets/87f8defc-89f7-4d62-8a53-dd3a7120f6a8" />
+</p>
+<p align="center">
+  <img  width="80%" alt="scr2" src="https://github.com/user-attachments/assets/a8e52a08-22cd-41bf-bb4b-f69aa44db339" />
+</p>
+
+
 ## Aperçu
 
 - Lecture Svelte réactive avec des composants spécialisés (`src/lib/mushaf`) pour les pages, lignes et mots.
