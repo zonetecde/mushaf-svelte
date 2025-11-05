@@ -1,38 +1,44 @@
-# sv
+# Mushaf Ihab
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Projet Svelte permettant de lire le mushaf de Hafs par Assim avec la calligraphie uthmanienne. L'application offre une navigation rapide (sourate, page, juz, hizb), une vue double page ou page simple et le choix de la version de la police QPC.
 
-## Creating a project
+## Apercu du projet
+- Interface Svelte reactive concue pour la lecture du mushaf.
+- Composants dedies (`src/lib/mushaf`) pour structurer pages, lignes et mots.
+- Donnees generees a partir du depot <https://github.com/zonetecde/mushaf-layout>.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Fonctionnalites principales
+- Navigation instantanee par sourate, page, juz ou hizb.
+- Affichage en double page ou page unique selon la preference.
+- Selection de la variante QPC souhaitee pour la police du mushaf.
+- Experience optimisee autour de la calligraphie uthmanienne.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Structure essentielle
+- `src/lib/mushaf` : composants Svelte pour le mushaf (page, ligne, navigation, footer).
+- `src/lib/classes` : classes TypeScript `Page`, `Line`, `Word` pour manipuler la structure du texte.
+- `static` : ressources statiques exposees telles que polices ou images.
+- `e2e` : tests end-to-end Playwright.
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+## Prise en main
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
+Le script `npm run dev` lance le serveur de developpement Vite avec SvelteKit.
 
-## Building
-
-To create a production version of your app:
-
-```sh
+Pour une construction de production :
+```bash
 npm run build
+npm run preview
 ```
 
-You can preview the production build with `npm run preview`.
+## Scripts npm utiles
+- `npm run dev` : demarrage du serveur de developpement.
+- `npm run build` : construction de la version production.
+- `npm run preview` : previsualisation locale de la build.
+- `npm run check` : verification Svelte + TypeScript.
+- `npm run lint` : verifications Prettier et ESLint.
+- `npm run test:e2e` : tests Playwright.
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Hebergement
+Le site est heberge sur <https://mondomaine.fr>.
