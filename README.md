@@ -14,6 +14,7 @@ Mushaf Svelte est une application Svelte dédiée à la lecture du mushaf de Haf
 
 - Lecture Svelte réactive avec des composants spécialisés (`src/lib/mushaf`) pour les pages, lignes et mots.
 - Données générées via le dépôt compagnon : <https://github.com/zonetecde/mushaf-layout>.
+- Deux jeux de 604 pages dans `static/mushaf/QPC1` et `static/mushaf/QPC2`, chacun avec son propre layout et uniquement ses glyphes (`qpcV1` ou `qpcV2`). Le choix de version recharge le jeu correspondant.
 - Police QPC ajustable pour sélectionner la variante de graphie la plus adaptée.
 
 ## Fonctionnalités clés

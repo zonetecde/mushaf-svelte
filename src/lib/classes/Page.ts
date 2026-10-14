@@ -11,7 +11,7 @@ export default class Page {
 	}
 
 	static fromJSON(data: any): Page {
-		const page = new Page(data.pageNumber);
+		const page = new Page(data.page);
 		page.lines = data.lines.map((lineData: any) => {
 			const lineType = lineData.type;
 

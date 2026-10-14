@@ -54,9 +54,19 @@
 		scale = newScale;
 	}
 
-	async function loadPageLines(pageNumber: number) {
-		const key = `/mushaf/page-${String(pageNumber).padStart(3, '0')}.json`;
-		const json = await (await fetch(key)).json();
+	/**
+	 * Charge le layout de la page pour l'édition sélectionnée.
+	 * @param {number} pageNumber Numéro de page, de 1 à 604.
+	 * @param {'1' | '2'} qpcVersion Édition QPC sélectionnée.
+	 * @param {AbortSignal} signal Annulation d'un chargement devenu obsolète.
+	 * @returns {Promise<void>} Résolution après la mise à jour de la page affichée.
+	 */
+	async function loadPageLines(pageNumber: number, qpcVersion: '1' | '2', signal: AbortSignal) {
+		const key = `/mushaf/QPC${qpcVersion}/page-${String(pageNumber).padStart(3, '0')}.json`;
+		const response = await fetch(key, { signal });
+		if (!response.ok) throw new Error(`Impossible de charger la page ${pageNumber} en QPC ${qpcVersion}`);
+		const json = await response.json();
+		if (signal.aborted) return;
 
 		if (!json) {
 			console.warn(`Mushaf lines file missing for page ${pageNumber}`);
@@ -91,7 +101,13 @@
 	});
 
 	$effect(() => {
-		loadPageLines(pageNumber);
+		const controller = new AbortController();
+		pageData = null;
+		loadPageLines(pageNumber, qpcVersion, controller.signal).catch((error) => {
+			if (error.name !== 'AbortError') console.error(error);
+		});
+		// Empêche une ancienne réponse de remplacer la page de l'édition courante.
+		return () => controller.abort();
 	});
 </script>
 

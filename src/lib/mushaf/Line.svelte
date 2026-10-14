@@ -17,7 +17,7 @@
 	} = $props();
 
 	const SURAH_HEADER_FONT = 'surahs';
-	const BASMALA_FONT = qpcFontProvider.getBasmalaFont(qpcVersion);
+	const BASMALA_FONT = $derived(qpcFontProvider.getBasmalaFont(qpcVersion));
 
 	const nextLineHasSurahHeader = $derived(() => {
 		return nextLine && nextLine.type === 'surah-header';

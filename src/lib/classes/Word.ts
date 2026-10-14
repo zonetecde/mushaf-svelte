@@ -4,7 +4,14 @@ export default class Word {
 	qpcV1: string; // Glyph for QPC version 1
 	qpcV2: string; // Glyph for QPC version 2
 
-	constructor(location: string, word: string, qpcV1: string, qpcV2: string) {
+	/**
+	 * Conserve les glyphes disponibles dans le jeu de données de l'édition choisie.
+	 * @param {string} location Position du mot dans le verset.
+	 * @param {string} word Texte arabe du mot.
+	 * @param {string} qpcV1 Glyphes QPC V1, absents dans le jeu V2.
+	 * @param {string} qpcV2 Glyphes QPC V2, absents dans le jeu V1.
+	 */
+	constructor(location: string, word: string, qpcV1: string = '', qpcV2: string = '') {
 		this.location = location;
 		this.word = word;
 		this.qpcV1 = qpcV1;
