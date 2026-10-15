@@ -5,7 +5,7 @@
 
 @font-face {
 	font-family: 'surahs';
-	src: url('./fonts/Surahs.ttf') format('truetype');
+	src: url('/fonts/Surahs.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
